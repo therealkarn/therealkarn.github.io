@@ -1,0 +1,6 @@
+---
+title: "Karn's Trials and Tribulations"
+listing:
+  contents: posts
+  sort: "date desc"
+---
