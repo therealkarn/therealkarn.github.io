@@ -4,13 +4,34 @@
     "href": "about.html",
     "title": "About",
     "section": "",
+    "text": "I attended McMaster University from 2019-2023, where I studied Actuarial and Financial Mathematics. During my undergraduate studies, I worked as an Army Reservist in the Canadian Armed Forces. Beginning my tenure in 2021, I partake in various training courses to progress within in the ranks of the Royal Canadian Artillery to Bombardier. This is the rank that I released from the forces with in 2024. In the same year, I began working as a Management Trainee at Cintas Corporation in Toronto, Ontario. I had a variety of responsibilities in this role including, but not limited to, administrative taskings, process optimization, sales, and production/service operations."
+  },
+  {
+    "objectID": "about.html#section",
+    "href": "about.html#section",
+    "title": "About",
+    "section": "",
+    "text": "I chose a graduate education in data science because I had continued exposure to operational issues and redundancies that could have been addressed with the appropriate use of data. This data was already being collected, however, I observed that organizations were ill equipped to derive any actionable outputs out of it (at least to the extent that was warranted). These observations, alongside my existing background in mathematics and statistics, pushed me to specialize in data science, where I hope to utilize the skills I will develop over the program to help organizations make the most of their inputs."
+  },
+  {
+    "objectID": "about.html#section-1",
+    "href": "about.html#section-1",
+    "title": "About",
+    "section": "",
+    "text": "My hobbies are rather simple but, I like to believe, far from boring. I enjoy film, music, cooking, and exercise. My favourite activities include weightlifting, swimming, and football (soccer). If I am not doing these things, I am probably just doing whatever my partner wants."
+  },
+  {
+    "objectID": "about.html#section-2",
+    "href": "about.html#section-2",
+    "title": "About",
+    "section": "",
     "text": "About this site"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "therealkarn’s_site",
+    "title": "Karn Nijjar",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "I studied Actuarial and Financial Mathematics at McMaster University from 2019-2023. I have worked in various fields, most notably as a Bombardier in the Canadian Armed Forces and as a Management Trainee at Cintas. I enjoy film, music, weightlifting, swimming, and football (soccer). I am excited to progress in the MDS program and develop my skillset for future employment in a field that I find rewarding and highly useful. - Karn"
   }
 ]

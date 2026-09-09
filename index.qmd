@@ -1,7 +1,8 @@
 ---
-title: "therealkarn's_site"
+title: "Karn Nijjar"
 ---
 
-This is a Quarto website.
+![](images/fall2.jpg){width=250px}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+I studied Actuarial and Financial Mathematics at McMaster University from 2019-2023. I have worked in various fields, most notably as a Bombardier in the Canadian Armed Forces and as a Management Trainee at Cintas. I enjoy film, music, weightlifting, swimming, and football (soccer). I am excited to progress in the MDS program and develop my skillset for future employment in a field that I find rewarding and highly useful. - Karn 

@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "therealkarn's_site"
+  title: "Karn Nijjar"
   navbar:
     left:
       - href: index.qmd
