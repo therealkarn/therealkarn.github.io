@@ -1,0 +1,80 @@
+---
+title: "R and Python working together"
+author: "Karnbir Nijjar"
+date: "2026-09-23"
+---
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER. Released under CC0.
+
+## On the dataset
+
+This dataset has information on penguins of three species from three islands in Antarctica. 
+
+## Intent
+
+To replicate the penguins body mass by species and sex analysis, this time using Python to generate the averaged data and R to plot the averaged data. 
+
+## Setup 
+
+```{r}
+#| label: setup
+#| warning: false
+#| message: false
+library(reticulate)
+library(ggplot2)
+use_virtualenv("../../.venv", required = TRUE)
+```
+
+## Python element 
+
+```{python}
+#| label: python-summary
+from palmerpenguins import load_penguins
+```
+
+```{python}
+#| label: load
+penguins = load_penguins()
+```
+
+```{python}
+#| label: filter
+penguins_filtered = penguins.dropna(subset = ['body_mass_g' , 'sex'])
+```
+
+```{python}
+#| label: tbl-body-mass-summary
+#| tbl-cap: "Average body mass (g) by species and sex"
+
+avg_body_mass_table = (
+  penguins_filtered
+  .groupby(['species', 'sex'])['body_mass_g']
+  .mean()
+  .round()
+  .reset_index(name = "average_body_mass_in_grams")
+)
+
+avg_body_mass_table
+```
+
+## R element
+
+```{r}
+#| label: fig-avg-mass
+#| fig-cap: "Average body mass by species and sex using both Python and R"
+
+avg_mass_data <- py$avg_body_mass_table
+
+ggplot(avg_mass_data, aes(x = species, y = average_body_mass_in_grams, fill = sex)) +
+  geom_col(position = "dodge") +
+  labs(x = "Species", y = "Average body mass (grams)", fill = "Sex") +
+  theme_bw()
+
+```
+
+## Takeaways 
+
+Gentoo penguins have the highest average body mass compared to the other two species (Adelie and Chinstrap penguins have very similar average body masses). Across all species, males have larger average body masses than their female counterparts. This is especially true for the Gentoo species. 
+The average body mass data and table were generated using Python. R utilized Python handled data to create the plot.
+

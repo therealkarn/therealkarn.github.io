@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Karn’s Trials and Tribulations",
     "section": "",
-    "text": "Penguin body mass by species and sex (Python version)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin body mass by species and sex (R version)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\nNo matching items"
+    "text": "Penguin body mass by species and sex (Python version)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin body mass by species and sex (R version)\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\n\n\n\n\n\n\n\nR and Python working together\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\nKarnbir Nijjar\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -21,32 +21,67 @@
     "text": "Welcome\nI’m Karn.\nI’m a Master of Data Science student at UBC. I hail from Toronto, ON in Canada and I studied Actuarial and Financial Mathematics in my undergraduate degree at McMaster University.\nI served as a reservist for three years in the Canadian Armed Forces before releasing with the rank of Bombardier. I also worked as a Management Trainee at Cintas for just over two years where I held roles in production, service, and sales.\nAfter MDS, I hope to work as a Data Scientist at an organization that utilizes data in an ethical and meaningful way."
   },
   {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
+    "objectID": "posts/penguin-mass-r/index.html",
+    "href": "posts/penguin-mass-r/index.html",
+    "title": "Penguin body mass by species and sex (R version)",
     "section": "",
-    "text": "Orientation was interesting. It was good to learn more about the program, its structure, and deliverables. Long PowerPoints were as fun as long PowerPoints can be but they were important. Listening to the program’s alumni was reassuring and fear-inducing at the same time (an interesting combination of emotions). It was really nice to meet my peers and start forming connections."
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER. Released under CC0."
   },
   {
-    "objectID": "posts/first-weeks/index.html#orientation",
-    "href": "posts/first-weeks/index.html#orientation",
-    "title": "My first weeks in MDS",
-    "section": "",
-    "text": "Orientation was interesting. It was good to learn more about the program, its structure, and deliverables. Long PowerPoints were as fun as long PowerPoints can be but they were important. Listening to the program’s alumni was reassuring and fear-inducing at the same time (an interesting combination of emotions). It was really nice to meet my peers and start forming connections."
+    "objectID": "posts/penguin-mass-r/index.html#on-the-dataset",
+    "href": "posts/penguin-mass-r/index.html#on-the-dataset",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "On the dataset",
+    "text": "On the dataset\nThis dataset has information on penguins of different species that originate on islands in Antarctica."
   },
   {
-    "objectID": "posts/first-weeks/index.html#first-weeks",
-    "href": "posts/first-weeks/index.html#first-weeks",
-    "title": "My first weeks in MDS",
-    "section": "First Weeks",
-    "text": "First Weeks\nThe first week of classes was nostalgic, having been three years since I had been to a lecture hall. Then came the workload. The sheer quantity of what we had to deliver each week felt overwhelming, even having been warned of it the week prior during orientation. However, those feelings quickly faded and I started to get into the rhythm of it.\n\n\n\nArtistic rendition."
+    "objectID": "posts/penguin-mass-r/index.html#intent",
+    "href": "posts/penguin-mass-r/index.html#intent",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Intent",
+    "text": "Intent\nWe are going to investigate this dataset to find out how body mass differs between males and females in each species and how the species fare against one another in this regard."
   },
   {
-    "objectID": "posts/first-weeks/index.html#what-surprised-me",
-    "href": "posts/first-weeks/index.html#what-surprised-me",
-    "title": "My first weeks in MDS",
-    "section": "What Surprised Me",
-    "text": "What Surprised Me\nThe emotional disparity between starting lectures at 0930 and 0800."
+    "objectID": "posts/penguin-mass-r/index.html#summoning-the-libraries",
+    "href": "posts/penguin-mass-r/index.html#summoning-the-libraries",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Summoning the libraries",
+    "text": "Summoning the libraries\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(knitr)"
+  },
+  {
+    "objectID": "posts/penguin-mass-r/index.html#glimpsing-the-dataset",
+    "href": "posts/penguin-mass-r/index.html#glimpsing-the-dataset",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Glimpsing the dataset",
+    "text": "Glimpsing the dataset\nLet’s glimpse the dataset we will be operating on:\n\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+  },
+  {
+    "objectID": "posts/penguin-mass-r/index.html#manipulating-the-dataset-into-a-filtered-version",
+    "href": "posts/penguin-mass-r/index.html#manipulating-the-dataset-into-a-filtered-version",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Manipulating the dataset into a filtered version",
+    "text": "Manipulating the dataset into a filtered version\nWe are going to clean up the dataset by filtering out rows that do not have a value for body mass or sex. Then, let’s glimpse the new dataset penguins_filtered.\n\npenguins_filtered &lt;- penguins |&gt;\n  filter(!is.na(body_mass_g), !is.na(sex))\n\nglimpse(penguins_filtered)\n\nRows: 333\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6…\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.2…\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 18…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800…\n$ sex               &lt;fct&gt; male, female, female, female, male, female, male, fe…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\nLet’s see how different the amount of data is between penguins and our penguins_filtered:\n\nnrow(penguins)\n\n[1] 344\n\nnrow(penguins_filtered)\n\n[1] 333\n\n\nLooks like our filtering got rid of 11 rows."
+  },
+  {
+    "objectID": "posts/penguin-mass-r/index.html#average-body-mass-g-by-species-and-sex",
+    "href": "posts/penguin-mass-r/index.html#average-body-mass-g-by-species-and-sex",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Average body mass (g) by species and sex",
+    "text": "Average body mass (g) by species and sex\nWe are going to find average body mass (rounded to the closest non-decimal number) for males and females of every species in the dataset, formatting that information into a table.\n\navg_body_mass_table &lt;- penguins_filtered |&gt;\n  group_by(species, sex) |&gt;\n  summarise(\n    average_body_mass_in_grams = round(mean(body_mass_g)),\n    .groups = \"drop\"\n  )\n\nkable(avg_body_mass_table)\n\n\n\nTable 1: Average body mass (g) by species and sex\n\n\n\n\n\n\nspecies\nsex\naverage_body_mass_in_grams\n\n\n\n\nAdelie\nfemale\n3369\n\n\nAdelie\nmale\n4043\n\n\nChinstrap\nfemale\n3527\n\n\nChinstrap\nmale\n3939\n\n\nGentoo\nfemale\n4680\n\n\nGentoo\nmale\n5485"
+  },
+  {
+    "objectID": "posts/penguin-mass-r/index.html#plotting-our-penguins",
+    "href": "posts/penguin-mass-r/index.html#plotting-our-penguins",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Plotting our penguins",
+    "text": "Plotting our penguins\nWe are going to make a boxplot of the filtered penguins dataset. The plot will visualize the body mass (in grams) of both males and females in each species.\n\nggplot(penguins_filtered, aes(x = species, y = body_mass_g, fill = sex)) +\n  geom_boxplot() +\n  labs(x = \"Species\", y = \"Body mass (grams)\", fill = \"Sex\") +\n  theme_bw()\n\n\n\n\n\n\n\nFigure 1: Body mass of penguins by species and sex"
+  },
+  {
+    "objectID": "posts/penguin-mass-r/index.html#takeaways",
+    "href": "posts/penguin-mass-r/index.html#takeaways",
+    "title": "Penguin body mass by species and sex (R version)",
+    "section": "Takeaways",
+    "text": "Takeaways\nIt seems that males are generally heavier than their female counterparts in each of the three species in the dataset. This is most prominent in Gentoo penguins.\nOut of the three species, Gentoo penguins are the heaviest. Adelie and Chinstrap penguins do not seem to be too different in their average body masses."
   },
   {
     "objectID": "posts/penguin-mass-python/index.html",
@@ -119,67 +154,81 @@
     "text": "Takeaways\nMales have larger body masses than their female counterparts for all the species, most evidently in the Gentoo penguins.\nGentoo penguins have higher body masses than Adelie and Chinstrap penguins (whose body masses are not that different from one another)."
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html",
-    "href": "posts/penguin-mass-r/index.html",
-    "title": "Penguin body mass by species and sex (R version)",
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Orientation was interesting. It was good to learn more about the program, its structure, and deliverables. Long PowerPoints were as fun as long PowerPoints can be but they were important. Listening to the program’s alumni was reassuring and fear-inducing at the same time (an interesting combination of emotions). It was really nice to meet my peers and start forming connections."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html#orientation",
+    "href": "posts/first-weeks/index.html#orientation",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Orientation was interesting. It was good to learn more about the program, its structure, and deliverables. Long PowerPoints were as fun as long PowerPoints can be but they were important. Listening to the program’s alumni was reassuring and fear-inducing at the same time (an interesting combination of emotions). It was really nice to meet my peers and start forming connections."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html#first-weeks",
+    "href": "posts/first-weeks/index.html#first-weeks",
+    "title": "My first weeks in MDS",
+    "section": "First Weeks",
+    "text": "First Weeks\nThe first week of classes was nostalgic, having been three years since I had been to a lecture hall. Then came the workload. The sheer quantity of what we had to deliver each week felt overwhelming, even having been warned of it the week prior during orientation. However, those feelings quickly faded and I started to get into the rhythm of it.\n\n\n\nArtistic rendition."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html#what-surprised-me",
+    "href": "posts/first-weeks/index.html#what-surprised-me",
+    "title": "My first weeks in MDS",
+    "section": "What Surprised Me",
+    "text": "What Surprised Me\nThe emotional disparity between starting lectures at 0930 and 0800."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html",
+    "href": "posts/r-and-python/index.html",
+    "title": "R and Python working together",
     "section": "",
     "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER. Released under CC0."
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html#on-the-dataset",
-    "href": "posts/penguin-mass-r/index.html#on-the-dataset",
-    "title": "Penguin body mass by species and sex (R version)",
+    "objectID": "posts/r-and-python/index.html#on-the-dataset",
+    "href": "posts/r-and-python/index.html#on-the-dataset",
+    "title": "R and Python working together",
     "section": "On the dataset",
-    "text": "On the dataset\nThis dataset has information on penguins of different species that originate on islands in Antarctica."
+    "text": "On the dataset\nThis dataset has information on penguins of three species from three islands in Antarctica."
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html#intent",
-    "href": "posts/penguin-mass-r/index.html#intent",
-    "title": "Penguin body mass by species and sex (R version)",
+    "objectID": "posts/r-and-python/index.html#intent",
+    "href": "posts/r-and-python/index.html#intent",
+    "title": "R and Python working together",
     "section": "Intent",
-    "text": "Intent\nWe are going to investigate this dataset to find out how body mass differs between males and females in each species and how the species fare against one another in this regard."
+    "text": "Intent\nTo replicate the penguins body mass by species and sex analysis, this time using Python to generate the averaged data and R to plot the averaged data."
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html#summoning-the-libraries",
-    "href": "posts/penguin-mass-r/index.html#summoning-the-libraries",
-    "title": "Penguin body mass by species and sex (R version)",
-    "section": "Summoning the libraries",
-    "text": "Summoning the libraries\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(knitr)"
+    "objectID": "posts/r-and-python/index.html#setup",
+    "href": "posts/r-and-python/index.html#setup",
+    "title": "R and Python working together",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(reticulate)\nlibrary(ggplot2)\nuse_virtualenv(\"../../.venv\", required = TRUE)"
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html#glimpsing-the-dataset",
-    "href": "posts/penguin-mass-r/index.html#glimpsing-the-dataset",
-    "title": "Penguin body mass by species and sex (R version)",
-    "section": "Glimpsing the dataset",
-    "text": "Glimpsing the dataset\nLet’s glimpse the dataset we will be operating on:\n\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+    "objectID": "posts/r-and-python/index.html#python-element",
+    "href": "posts/r-and-python/index.html#python-element",
+    "title": "R and Python working together",
+    "section": "Python element",
+    "text": "Python element\n\nfrom palmerpenguins import load_penguins\n\n\npenguins = load_penguins()\n\n\npenguins_filtered = penguins.dropna(subset = ['body_mass_g' , 'sex'])\n\n\n\n\nTable 1: Average body mass (g) by species and sex\n\n\navg_body_mass_table = (\n  penguins_filtered\n  .groupby(['species', 'sex'])['body_mass_g']\n  .mean()\n  .round()\n  .reset_index(name = \"average_body_mass_in_grams\")\n)\n\navg_body_mass_table\n\n     species     sex  average_body_mass_in_grams\n0     Adelie  female                      3369.0\n1     Adelie    male                      4043.0\n2  Chinstrap  female                      3527.0\n3  Chinstrap    male                      3939.0\n4     Gentoo  female                      4680.0\n5     Gentoo    male                      5485.0"
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html#manipulating-the-dataset-into-a-filtered-version",
-    "href": "posts/penguin-mass-r/index.html#manipulating-the-dataset-into-a-filtered-version",
-    "title": "Penguin body mass by species and sex (R version)",
-    "section": "Manipulating the dataset into a filtered version",
-    "text": "Manipulating the dataset into a filtered version\nWe are going to clean up the dataset by filtering out rows that do not have a value for body mass or sex. Then, let’s glimpse the new dataset penguins_filtered.\n\npenguins_filtered &lt;- penguins |&gt;\n  filter(!is.na(body_mass_g), !is.na(sex))\n\nglimpse(penguins_filtered)\n\nRows: 333\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6…\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.2…\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 18…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800…\n$ sex               &lt;fct&gt; male, female, female, female, male, female, male, fe…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\nLet’s see how different the amount of data is between penguins and our penguins_filtered:\n\nnrow(penguins)\n\n[1] 344\n\nnrow(penguins_filtered)\n\n[1] 333\n\n\nLooks like our filtering got rid of 11 rows."
+    "objectID": "posts/r-and-python/index.html#r-element",
+    "href": "posts/r-and-python/index.html#r-element",
+    "title": "R and Python working together",
+    "section": "R element",
+    "text": "R element\n\navg_mass_data &lt;- py$avg_body_mass_table\n\nggplot(avg_mass_data, aes(x = species, y = average_body_mass_in_grams, fill = sex)) +\n  geom_col(position = \"dodge\") +\n  labs(x = \"Species\", y = \"Average body mass (grams)\", fill = \"Sex\") +\n  theme_bw()\n\n\n\n\n\n\n\nFigure 1: Average body mass by species and sex using both Python and R"
   },
   {
-    "objectID": "posts/penguin-mass-r/index.html#average-body-mass-g-by-species-and-sex",
-    "href": "posts/penguin-mass-r/index.html#average-body-mass-g-by-species-and-sex",
-    "title": "Penguin body mass by species and sex (R version)",
-    "section": "Average body mass (g) by species and sex",
-    "text": "Average body mass (g) by species and sex\nWe are going to find average body mass (rounded to the closest non-decimal number) for males and females of every species in the dataset, formatting that information into a table.\n\navg_body_mass_table &lt;- penguins_filtered |&gt;\n  group_by(species, sex) |&gt;\n  summarise(\n    average_body_mass_in_grams = round(mean(body_mass_g)),\n    .groups = \"drop\"\n  )\n\nkable(avg_body_mass_table)\n\n\n\nTable 1: Average body mass (g) by species and sex\n\n\n\n\n\n\nspecies\nsex\naverage_body_mass_in_grams\n\n\n\n\nAdelie\nfemale\n3369\n\n\nAdelie\nmale\n4043\n\n\nChinstrap\nfemale\n3527\n\n\nChinstrap\nmale\n3939\n\n\nGentoo\nfemale\n4680\n\n\nGentoo\nmale\n5485"
-  },
-  {
-    "objectID": "posts/penguin-mass-r/index.html#plotting-our-penguins",
-    "href": "posts/penguin-mass-r/index.html#plotting-our-penguins",
-    "title": "Penguin body mass by species and sex (R version)",
-    "section": "Plotting our penguins",
-    "text": "Plotting our penguins\nWe are going to make a boxplot of the filtered penguins dataset. The plot will visualize the body mass (in grams) of both males and females in each species.\n\nggplot(penguins_filtered, aes(x = species, y = body_mass_g, fill = sex)) +\n  geom_boxplot() +\n  labs(x = \"Species\", y = \"Body mass (grams)\", fill = \"Sex\") +\n  theme_bw()\n\n\n\n\n\n\n\nFigure 1: Body mass of penguins by species and sex"
-  },
-  {
-    "objectID": "posts/penguin-mass-r/index.html#takeaways",
-    "href": "posts/penguin-mass-r/index.html#takeaways",
-    "title": "Penguin body mass by species and sex (R version)",
+    "objectID": "posts/r-and-python/index.html#takeaways",
+    "href": "posts/r-and-python/index.html#takeaways",
+    "title": "R and Python working together",
     "section": "Takeaways",
-    "text": "Takeaways\nIt seems that males are generally heavier than their female counterparts in each of the three species in the dataset. This is most prominent in Gentoo penguins.\nOut of the three species, Gentoo penguins are the heaviest. Adelie and Chinstrap penguins do not seem to be too different in their average body masses."
+    "text": "Takeaways\nGentoo penguins have the highest average body mass compared to the other two species (Adelie and Chinstrap penguins have very similar average body masses). Across all species, males have larger average body masses than their female counterparts. This is especially true for the Gentoo species. The average body mass data and table were generated using Python. R utilized Python handled data to create the plot."
   },
   {
     "objectID": "about.html",
