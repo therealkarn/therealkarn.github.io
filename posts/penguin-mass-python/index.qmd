@@ -1,0 +1,101 @@
+---
+title: "Penguin body mass by species and sex (Python version)"
+author: "Karnbir Nijjar"
+date: "2026-09-23"
+---
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER. Released under CC0.
+
+## On the dataset
+
+This dataset has information on penguins of three species from three islands in Antarctica. 
+
+## Intent
+
+We are going to examine how body mass differs between males and females in each species and how the species fare against each other in this regard. 
+
+## The libraries
+
+```{python}
+#| label: setup-py
+#| warning: false
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from palmerpenguins import load_penguins
+```
+
+## The dataset 
+
+We are going to load in the dataset as penguins. 
+
+```{python}
+#| label: load
+penguins = load_penguins()
+penguins
+```
+
+## Filtering the dataset
+
+We are going to filter the penguins dataset to get rid of the rows with no body mass or sex value. This filtered dataset will be known as penguins_filtered. 
+
+```{python}
+#| label: filter
+penguins_filtered = penguins.dropna(subset = ['body_mass_g' , 'sex'])
+penguins_filtered
+```
+
+## Assessing the changes 
+
+We are simply going to see how many rows the filtering got rid of. 
+
+```{python}
+#| label: row-counts
+print(len(penguins))
+print(len(penguins_filtered))
+```
+
+We got rid of 11 rows that housed no values for body mass and/or sex.
+
+## Average body mass (g) by species and sex
+
+Now, let's make a table that shows the average body mass in grams of the male and female penguins in each species. 
+
+```{python}
+#| label: tbl-body-mass-summary
+#| tbl-cap: "Average body mass (g) by species and sex"
+
+avg_body_mass_table = (
+  penguins_filtered
+  .groupby(['species', 'sex'])['body_mass_g']
+  .mean()
+  .round()
+  .reset_index(name = "average_body_mass_in_grams")
+)
+
+avg_body_mass_table
+```
+
+## Plotting our penguins
+
+Now, let's make a plot of our filtered penguin data. 
+
+```{python}
+#| label: fig-penguin-mass-python
+#| fig-cap: "Body mass of penguins by sex and species"
+
+fig, ax = plt.subplots()
+sns.boxplot(data = penguins_filtered, x = 'species', y = 'body_mass_g', hue = "sex", order = ['Adelie', 'Chinstrap', 'Gentoo'], hue_order = ['female', 'male'], ax = ax)
+ax.set_xlabel("Species")
+ax.set_ylabel("Body mass (grams)")
+ax.legend(title = "Sex")
+plt.show()
+
+```
+
+## Takeaways
+
+Males have larger body masses than their female counterparts for all the species, most evidently in the Gentoo penguins. 
+
+Gentoo penguins have higher body masses than Adelie and Chinstrap penguins (whose body masses are not that different from one another).
